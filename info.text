@@ -1,0 +1,19 @@
+npm init 
+npx install cypress
+npx cypress open
+npx cypress run
+
+
+# day 1 
+
+# what is test scenario ?
+
+----->  what to test is test scenario 
+
+# what is test case ?
+
+---->   how to test ?
+
+# how you write testscenario in cypress and test case ?
+
+----> describe block testscenario  it block testcase
