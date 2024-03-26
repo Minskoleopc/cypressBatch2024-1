@@ -2,6 +2,7 @@ npm init
 npx install cypress
 npx cypress open
 npx cypress run
+# if you are cloining the project  - npm install
 
 
 # day 1 
@@ -17,3 +18,5 @@ npx cypress run
 # how you write testscenario in cypress and test case ?
 
 ----> describe block testscenario  it block testcase
+
+
