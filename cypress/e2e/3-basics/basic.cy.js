@@ -1,8 +1,6 @@
 /// <reference types="cypress" />
 
 describe('verify cypress basic commands',function(){
-
-
     it('verify the title of page',function(){
         cy.visit('https://webdriveruniversity.com/')
         cy.title().should('contain','WebDriverUniversity.com')
@@ -31,6 +29,8 @@ describe('verify cypress basic commands',function(){
         cy.reload()
         cy.wait(2000)
         cy.log('after 2 seconds')
+        cy.reload()
+        cy.log('after reload')
     })
 
 
