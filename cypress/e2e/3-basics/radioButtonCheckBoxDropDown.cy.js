@@ -57,13 +57,22 @@ describe('verify the radio button', function () {
 
     })
 
-    it.only('selecting the dropdown - one',function(){
-        let selection = ["java","maven","css"]
+    it('selecting the dropdown - one',function(){
+        let selection = ["java","maven","css"] 
         cy.get('.section-title').first().find('select').each(function(el,index){
             cy.wrap(el).select(selection[index])
         })
 
     })
+
+    it.only('verify the disable enabled , and selected radio button',function(){
+        cy.get('input[value = "cabbage"]').should('be.disabled')
+        cy.get('input[value = "lettuce"]').should('not.be.disabled')
+        cy.get('input[value = "pumpkin"]').should('be.checked')
+    })
+
+
+
 
 
 
