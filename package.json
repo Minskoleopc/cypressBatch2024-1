@@ -12,5 +12,8 @@
   "dependencies": {
     "cypress": "^13.7.1",
     "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^5.0.8"
   }
 }
