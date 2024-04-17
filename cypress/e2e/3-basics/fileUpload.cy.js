@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 
 describe('verify the file upload in cypress',function(){
-
     it('verify the file upload in cypress - example 1',function(){
         cy.on('window:alert',function(str){
             expect(str).to.eq('Your file has now been uploaded!')

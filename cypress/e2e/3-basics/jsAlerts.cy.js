@@ -44,7 +44,7 @@ describe('manage js alert',function(){
     
     it.only('window:prompt',function(){
         cy.window().then(function(win){
-            cy.stub(win,'prompt').returns('hello i am i am learning js')
+            cy.stub(win,'prompt').returns('hello i am learning js')
             cy.contains('Click for JS Prompt').click()
             cy.get('#result').should('contain','hello i am i am learning js')
         })
