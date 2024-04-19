@@ -29,4 +29,38 @@ describe('mouse actions ',function(){
         cy.get('#narbar-menu > ul > li:nth-child(1) > div > div > ul > li:nth-child(2) > a').should('be.visible')
     })
 
+    it('scrollInView',function(){
+        cy.visit('https://webdriveruniversity.com/')
+        cy.get('#popup-alerts').scrollIntoView({ duration: 2000 })
+       
+    })
+
+    it('click and hold',function(){
+        cy.visit('https://webdriveruniversity.com/Actions/index.html')
+        cy.get('#click-box').find('p').should('have.text','Click and Hold!')
+        cy.get('#click-box').trigger('mousedown',{button:0})
+        cy.get('#click-box').should('contain','Well done')
+        cy.get('#click-box').trigger('mouseup',{button:0})
+        cy.get('#click-box').should('contain','Dont release me!!!')
+    })
+
+    it.only('Autosuggestive drop down',function(){
+        cy.visit('https://webdriveruniversity.com/Autocomplete-TextField/autocomplete-textfield.html')
+        cy.get('#myInput').type('B')
+        cy.get('#myInputautocomplete-list').children().each(function(el){
+            //cy.log(el.text())
+            if(el.text().includes('Bacon')){
+                cy.wrap(el).click();
+            }
+           
+        })
+        cy.get('#submit-button').click()
+        cy.url().should('contain',"Bacon")
+    })
+
+  
+
+    
+
+
 })
