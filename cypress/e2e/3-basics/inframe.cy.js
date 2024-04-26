@@ -22,16 +22,27 @@ describe('Iframe',function(){
         })
     })
 
-
-    
-    it.only('iframe 3 - javascript',function(){
+    it('iframe 3 - javascript',function(){
         cy.visit('https://webdriveruniversity.com/IFrame/index.html')
-
         let frame = cy.get('#frame').its('0.contentDocument.body').then(cy.wrap)
         frame.find('a[href= "index.html"]').should('have.text',"Home")
-
     })
 
+    
+    it.only('iframe 4 - javascript',function(){
+        cy.visit('https://webdriveruniversity.com/IFrame/index.html')
+        cy.getIframeBody('frame').find('a[href= "index.html"]').should('have.text',"Home")
+        
+    })
+
+    it.only('iframe 5 - javascript',function(){
+        cy.visit('https://the-internet.herokuapp.com/tinymce')
+        cy.getIframeBody('mce_0_ifr').find('p')
+        .should('have.text','Your content goes here.')
+        cy.getIframeBody('mce_0_ifr').find('p').type(`{ctrl+a}{ctrl+b}`)
+        cy.get('strong').first().should('have.text','Your content goes here.')
+        
+    })
 
 
 
