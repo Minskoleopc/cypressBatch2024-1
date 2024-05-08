@@ -11,7 +11,6 @@ describe('validate data-set with same testcase',function(){
             cy.get('input[name="email"]').type(info.email)
             cy.get('textarea[name="message"]').type(info.msg)
 
-
         })
 
 
